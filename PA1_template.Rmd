@@ -42,7 +42,13 @@ meanSteps
 ```{r average by time series , echo= TRUE, fig.height=6, fig.width= 10 }
 aveStepByTime <- aggregate(datanna$steps, by=list(interval = datanna$interval), FUN=mean)
 names(aveStepByTime)[2] <- "ave.steps"
- with(aveStepByTime,plot(interval,ave.steps,main="Average Daily Activity", xlab="time interval", ylab="Average steps"),type="l")
+ with(aveStepByTime,
+      plot(interval,ave.steps,
+           main="Average Daily Activity", 
+           xlab="time interval", 
+           ylab="Average steps",
+           type="l")
+ )
  
 ```
 
